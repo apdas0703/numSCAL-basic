@@ -124,7 +124,7 @@ double pnmSolver::solvePressuresConstantFlowRate() {
       if (p->getActive()) {
         if (p->getInlet()) {
           b(row) -=
-              p->getVolume() / inletPoresVolume * userInput::get().flowRate;
+              p->getVolume() / inletPoresVolume * userInput::get().flowRate; //weighted volume of either phase entering
         }
         if (p->getOutlet()) {
           conductivity -= p->getConductivity();
